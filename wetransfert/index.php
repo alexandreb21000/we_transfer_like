@@ -12,7 +12,8 @@
         <header class="h10vh d_flexcenter">
             <p>We transfert</p>
         </header>
-        <section class="h80vh">
+        <section class="h80vh d_flexcenter">
+            <p>logo</p>
         </section>
 
         <footer class="h10vh d_flexcenter">
