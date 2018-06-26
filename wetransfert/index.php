@@ -9,13 +9,15 @@
 </head>
 <body>
 
-        <header>
+        <header class="h10vh d_flexcenter">
             <p>We transfert</p>
         </header>
+        <section class="h80vh">
+        </section>
 
-        <section></section>
-        
-        <footer></footer>
+        <footer class="h10vh d_flexcenter">
+            <p> lien lien lien lien</p>
+        </footer>
 
     <script type="text/javascript" src="js/wetransfert.js"> </script>
 </body>
