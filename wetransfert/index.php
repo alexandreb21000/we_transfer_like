@@ -75,12 +75,33 @@
             <form class="dflex flex_column border" method="POST" action="fichierUpload.php" enctype="multipart/form-data">
             <label for="mailUploader">mail exp&eacute;diteur</label>
             <input type="text" name="mailUploader">
+
             <label for="mailCopy">mail copie</label>            
             <input type="text" name="mailCopy">
+
             <label for="mailUploader">Message</label>            
             <textarea name="message" rows="8" class="h20vh w20vh" cols="45">Message...</textarea><br>
-            <input type="file" name="fichierUpload" id="fichierUpload" onchange="loadFile(event)" multiple>
+
+            <input type="file" name="fichierUpload[]" id="fichierUpload" multiple>
+
             <input type="submit" name="submit" id="submit" value="Cr&eacute;er">
+            </form>
+
+                      <?php 
+                    if(isset($_POST['submit'])){
+                    
+                    // Count total files
+                    $countfiles = count($_FILES['file']['name']);
+
+                    // Looping all files
+                    for($i=0;$i<$countfiles;$i++){
+                    $filename = $_FILES['file']['name'][$i];
+                    
+                    echo $filename;
+                        }
+                    } 
+                    ?>
+
         </section>
 
  

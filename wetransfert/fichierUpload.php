@@ -63,7 +63,6 @@
             mail($mail,$sujet,$message,$header);
             //==========
 
-            echo "email envoyé";
 ?>
 
 <?php 
@@ -75,15 +74,28 @@
         $connexion = new PDO("mysql:host=$serveur;dbname=wetransfert",$login, $pass);
         $connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+        //recupere le nom de l'expediteur
         if(isset($_POST['mailUploader'])){
             $mailUploader = $_POST['mailUploader'];
             }
+
+        // action sur le fichier d'abord s'il y en a un
         if(isset($_FILES['fichierUpload']['tmp_name'])){
 
                 $content_dir = 'dossier/'; // dossier où sera déplacé le fichier
+                
+                //recuperation du fichier en variable
+                $tables = $_FILES['fichierUpload']['tmp_name'];
 
+                foreach($tables as $table){ 
+                }
+
+                echo $table;
                 $tmp_file = $_FILES['fichierUpload']['tmp_name'];
-                if( !is_uploaded_file($tmp_file) )
+
+                
+                //si le fichier a ete uploader
+                if( !is_uploaded_file($table) )
                 {
                     exit("Le fichier est introuvable");
                 }
@@ -92,25 +104,49 @@
                 // on copie le fichier dans le dossier de destination
                 $name_file = $_FILES['fichierUpload']['name'];
 
-
-                /*
+                // Je recupere le nom de l'image en variable car certaine syntaxe de fonction n'accepte pas les tableaux
+                $tabless = $_FILES['fichierUpload']['name'];
                 
-                while( !empty($tmp_file)){
-                
-                    echo $name_file;
-
+                foreach($tabless as $tableau){ 
                 }
-                */
-            
-                if( !move_uploaded_file($tmp_file, $content_dir . $name_file) )
+               
+                // Compte le nombre de fichiers
+                $countfiles = count($_FILES['fichierUpload']['name']);
+
+                // Looping all filesnames
+                for($i=0;$i<$countfiles;$i++){
+                $filename = $_FILES['fichierUpload']['name'][$i];
+                }
+
+                // Looping all files                
+                for($i=0;$i<$countfiles;$i++){
+                    $file = $_FILES['fichierUpload']['tmp_name'][$i];
+                    }
+
+
+                //Deplacement fichier uploader via bouton upload        
+                if( !move_uploaded_file($table, $content_dir . $tableau) )
                 {
                     exit("Impossible de copier le fichier dans $content_dir");
                 }
+                // Je recupere le nom de l'image en tableau
+                $imgName = $_FILES['fichierUpload']['name'];
+                // Je cree l'archive
+                $zip = new ZipArchive();
+                //nom de l'archive
+                $nomzip = "./".$filename."_".date('d-m-Y-G-i-s').".zip";
 
-                $imgExt = substr($_FILES['fichierUpload']['name'], strrpos($_FILES['fichierUpload']['name'], '.') + 1);                
-                $imgName = $_FILES['fichierUpload']['name'];                
+                if ($zip->open($nomzip, ZipArchive::CREATE)!==TRUE) {
+                    exit("Impossible d'ouvrir le fichier <$nomzip>\n");
+                }
+                //ajout fichier
+                $zip->addFile("./dossier/".$tableau);
+                echo "Nombre de fichiers : " . $zip->numFiles . "\n";
+                echo "Statut :" . $zip->status . "\n";
+                $zip->close();
+
                 $fichierUpload = $imgName;
-            }
+        }
 
         $dateUpload = date('d-m-Y-G-i');
 
@@ -118,10 +154,13 @@
 
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-        $stmt->bindParam(':fichierUpload',$fichierUpload);
+        $stmt->bindParam(':fichierUpload',$table);
         $stmt->bindParam(':mailUploader',$mailUploader);
         $stmt->bindParam(':dateUpload',$dateUpload);        
         $stmt->execute();
+        header("Status: 301 Moved Permanently", false, 301);
+        header("Location: uploadfait.php");
+        exit();
     }
     catch(PDOException $e) {
         echo"echec : ".$e -> getMessage();
@@ -134,11 +173,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <META HTTP-EQUIV="Refresh" CONTENT="5; URL=uploadfait.php">
     <link rel="stylesheet" href="css/wetransfert.css">
     <title>We transfert</title>
 </head>
-<body onload="depart();">
+<body>
 
         <header class="h10vh bgblack clrwhite d_flexcenter">
             <p>We transfert</p>
@@ -149,11 +187,20 @@
 
             <p class="fs100">UPLOAD EN COURS...</p>
             <?php
+              if(isset($_POST['submit'])){
+                    
+                // Count total files
+                $countfiles = count($_FILES['fichierUpload']['name']);
 
-            print_r($_FILES['fichierUpload']);
-            
+                // Looping all files
+                for($i=0;$i<$countfiles;$i++){
+                $filename = $_FILES['fichierUpload']['name'][$i];
+                echo "<br>".$filename;
+                }
+                
+            } 
             ?>
-
+      
         </section>
 
  
