@@ -61,10 +61,10 @@
     <link rel="stylesheet" href="css/wetransfert.css">
     <title>We transfert</title>
 </head>
-<body>
+<body class="bg-violet">
 
-        <header class="h10vh bgblack clrwhite d_flexcenter">
-            <p>We transfert</p>
+        <header class="">
+            <p></p>
         </header>
         
             
@@ -105,10 +105,15 @@
         </section>
 
  
-        <footer class="h10vh bgblack clrwhite d_flexcenter">
-            <p> lien lien lien lien</p>
+        <footer class="">
+        <object type="image/svg+xml" data="../ressources_projet/bottom_elements.svg" width="1920px" height="300px">
+
+        </object>
         </footer>
 
+    
+    <script type="text/javascript" src="js/jquery.js"> </script>
+    <script type="text/javascript" src="js/jquery.lazylinepainter-1.7.0.min.js"> </script>
     <script type="text/javascript" src="js/wetransfert.js"> </script>
 </body>
 </html>
