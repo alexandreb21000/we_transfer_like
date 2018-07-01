@@ -27,6 +27,7 @@ section{
     position: absolute;
 
 }
+.clrwhite{color: white;}
 
 .labelupload{
 	display: flex;

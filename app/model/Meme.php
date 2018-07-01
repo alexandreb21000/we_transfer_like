@@ -6,15 +6,41 @@ Class Meme extends Model{
 
     public static function upload() {
         $db = Database::getInstance();
-
+        function test_input($data) {
+            $data = trim($data );
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
                 //recupere le nom de l'expediteur                    
                 if(isset($_POST['q1'])){
                 $nomexpediteur = $_POST['q1'];
                 }
-                //recupere le nom de l'expediteur        
+                
+                $choixg = isset($_POST['q1']) ? $_POST['q1'] : NULL;
+   
+                if(empty($choixg)){
+                    echo "Remplis l'information Nom de famille<br>";
+                }else {
+                }
+
+                if (!preg_match("/^[a-zA-Z ]*$/",$choixg)) {
+                    echo "un chiffre dans le nom ?<br>";
+                }
+
+                //recupere le mail de l'expediteur        
                 if(isset($_POST['q2'])){
                 $mailUploader = $_POST['q2'];
                 }
+                $choixi = isset($_POST['q2']) ? $_POST['q2'] : NULL;
+
+                if (empty($_POST["q2"])) {
+                    $CourrielErr = "Email is required";
+                    echo $CourrielErr;
+                } else if (!filter_var($choixi, FILTER_VALIDATE_EMAIL)) {
+                    $CourrielErr = "Invalid email format"; 
+                    echo $CourrielErr;
+                } 
                 //recupere recipent    
                 if(isset($_POST['q3'])){
                 $recipent = $_POST['q3'];
@@ -25,11 +51,22 @@ Class Meme extends Model{
                 $mailFriends = $_POST['q4'];
                 }
 
+                $choixig = isset($_POST['q4']) ? $_POST['q4'] : NULL;
+
+                if (empty($_POST["q4"])) {
+                    $CourrielErr = "Email is required";
+                    echo $CourrielErr;
+                } else if (!filter_var($choixi, FILTER_VALIDATE_EMAIL)) {
+                    $CourrielErr = "Invalid email format"; 
+                    echo $CourrielErr;
+                } 
+
                 //recupere le messagesender        
                 if(isset($_POST['message'])){
                     $messagesender = $_POST['message'];
                 }
-                
+                $choixh = isset($_POST['message']) ? $_POST['message'] : NULL;
+                $testcommentaires = test_input($choixh);
         
                 // action sur le fichier d'abord s'il y en a un
                 if(isset($_FILES['q6']['tmp_name'])){
@@ -89,7 +126,9 @@ Class Meme extends Model{
                 }
         
                 $dateUpload = date('d-m-Y-G-i');
-        
+
+
+                    //upload
                 $stmt = $db->prepare("INSERT INTO Upload(fichierUpload,mailUploader,dateUpload) VALUES (:fichierUpload,:mailUploader,:dateUpload)");
         
                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
