@@ -6,6 +6,7 @@ Class Meme extends Model{
 
     public static function upload() {
         $db = Database::getInstance();
+
         function test_input($data) {
             $data = trim($data );
             $data = stripslashes($data);
@@ -158,10 +159,11 @@ Class Meme extends Model{
             $message_html = "<html><head></head><body><img src='".$image."'>, voici un e-mail envoyé par un <i>script PHP</i>.</body></html>";
             //==========
             //=====Lecture et mise en forme de la pièce jointe.
+            /*
             $fichier   = fopen("index.php", "r");
             $attachement = fread($fichier, filesize("index.php"));
             $attachement = chunk_split(base64_encode($attachement));
-            fclose($fichier);
+            fclose($fichier);*/
             //==========
             //=====Création de la boundary.
             $boundary = "-----=".md5(rand());
@@ -171,8 +173,8 @@ Class Meme extends Model{
             $sujet = "Hey mon ami !";
             //========
             //=====Création du header de l'e-mail.
-            $header = "From: \"WeaponsB\"<acssatge@gmail.com>".$passage_ligne;
-            $header.= "Reply-to: \"WeaponsB\" <acssatge@gmail.com".$passage_ligne;
+            $header = "From: \"Kayros\"<acssatge@gmail.com>".$passage_ligne;
+            $header.= "Reply-to: \"Kayros\" <acssatge@gmail.com".$passage_ligne;
             $header.= "MIME-Version: 1.0".$passage_ligne;
             $header.= "Content-Type: multipart/mixed;".$passage_ligne." boundary=\"$boundary\"".$passage_ligne;
             //==========
@@ -196,11 +198,13 @@ Class Meme extends Model{
             //=========
             $message.= $passage_ligne."--".$boundary.$passage_ligne;
             //=====Ajout de la pièce jointe.
+            /*
             $message.= "Content-Type: image/jpeg; name=\"index.php\"".$passage_ligne;
             $message.= "Content-Transfer-Encoding: base64".$passage_ligne;
             $message.= "Content-Disposition: attachment; filename=\"index.php\"".$passage_ligne;
             $message.= $passage_ligne.$attachement.$passage_ligne.$passage_ligne;
-            $message.= $passage_ligne."--".$boundary."--".$passage_ligne; 
+            $message.= $passage_ligne."--".$boundary."--".$passage_ligne;
+            */ 
             //========== 
             //=====Envoi de l'e-mail.
             mail($mail,$sujet,$message,$header);
