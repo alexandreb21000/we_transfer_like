@@ -624,6 +624,7 @@
     <Content Include="app\assets\fonts\icomoon\icomoon.woff" />
     <Content Include="app\assets\fonts\MYRIADAB.TTF" />
     <Content Include="app\assets\fonts\Roboto-Light.ttf" />
+    <Content Include="app\assets\img\chienne.png" />
     <Content Include="app\assets\js\classie.js" />
     <Content Include="app\assets\js\modernizr.custom.js" />
     <Content Include="app\assets\js\script.js" />
@@ -645,6 +646,7 @@
     <Content Include="app\ressources_projet\planete.svg" />
     <Content Include="app\ressources_projet\planning.pdf" />
     <Content Include="app\ressources_projet\planning.xlsx" />
+    <Content Include="app\ressources_projet\wetransfert.sql" />
     <Content Include="app\view\Error\404.html.twig" />
     <Content Include="app\view\Index\display.html.twig" />
     <Content Include="app\view\Layout\footer.html.twig" />
