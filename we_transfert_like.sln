@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{A0786B88-2ADB-4C21-ABE8-AA2D79766269}") = "we_transfert_like", "we_transfert_like.phpproj", "{FA4F77F6-1D5E-4B1A-8FE4-907C1FB1163E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA4F77F6-1D5E-4B1A-8FE4-907C1FB1163E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA4F77F6-1D5E-4B1A-8FE4-907C1FB1163E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C984D828-90B8-48C2-AA8D-9B9186C19785}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,844 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	box-sizing: border-box;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+@font-face {      
+    font-family: "Ostrich";
+	src: url("../../Ostrich.ttf") format("opentype");
+}
+
+@font-face {      
+    font-family: "../../pokemon";
+	src: url("../../Pokemon_Solid.ttf") format("opentype");
+}
+
+@font-face {      
+    font-family: "ostrichSansInline_Italic";
+	src: url("../../OstrichSansInline_Italic2.ttf") format("opentype");
+}
+@font-face {      
+    font-family: "Capture_it";
+	src: url("../../font/Capture_it.ttf") format("opentype");
+}
+@font-face {      
+    font-family: "gunplay";
+	src: url("../../font/gunplay.ttf") format("opentype");
+}
+@font-face {      
+    font-family: "Top_Secret";
+	src: url("../../font/Top_Secret.ttf") format("opentype");
+}
+@font-face {      
+    font-family: "WarWound";
+	src: url("../../font/WarWound.ttf") format("opentype");
+}
+@font-face {      
+    font-family: "ts";
+	src: url("../../font/ts.ttf") format("opentype");
+}
+/***********************************************************************************/
+/******VARIABLE GLOBALE**/
+/***********************************************************************************/
+/***********************************************************************************/
+/***********************************************************************************/
+/***************FLEX**************************************************************/
+.dflex{
+    display: flex;
+}
+
+.d_flexcenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.centerligne{display: flex;justify-content: center;	}
+.flex_column{flex-direction: column;}
+.flex_wrap{flex-wrap: wrap;}
+/******************************************************************************************/
+/******************************************************************************************/
+/************************************HEIGHT&WIDTH******************************************/
+/******************************************************************************************/
+/******************************************************************************************/
+.h100vh{height: 100vh;}
+.h5vh{height: 5vh;}
+.h10vh{height: 10vh;}
+.h20vh{height: 20vh;}
+.h30vh{height: 30vh;}
+.h40vh{height: 40vh;}
+.h50vh{height: 50vh;}
+.h60vh{height: 60vh;}
+.h70vh{height: 70vh;}
+.h80vh{height: 80vh;}
+.h90vh{height: 90vh;}
+
+.h50px{height: 50px;}
+.h100px{height: 100px;}
+.h150px{height: 150px;}
+
+.h100ps{height: 100%;}
+
+.w20ps{width: 20%;}
+.w30ps{width: 30%;}
+.w50ps{width: 50%;}
+.w70ps{width: 70%;}
+.w80ps{width: 80%;}
+.w100ps{width: 100%;}
+
+.w5vh{width: 5vh;}
+.w50vh{width: 50vh;}
+.w70vh{width: 70vh;}
+.w80vh{width: 80vh;}
+.w90vh{width: 90vh;}
+.w60vh{width: 60vh;}
+.w40vh{width: 40vh;}
+
+
+.w20px{width: 20px;}
+/******************************************************************************************/
+/******************************************************************************************/
+/************************************BACKGROUND_COLOR**************************************/
+/******************************************************************************************/
+/******************************************************************************************/
+.bgred         {background-color: red;}
+.bgblue        {background-color: blue;}
+.bgviolet      {background-color: violet;}
+.bgyellow      {background-color: yellow;}
+.bgblack       {background-color: black;}
+.bggreen       {background-color: green;}
+/******************************************************************************************/
+/******************************************************************************************/
+/************************************BACKGROUND_IMG**************************************/
+/******************************************************************************************/
+/******************************************************************************************/
+.background_centpcent{background-size: 100% 100%;}
+.background_cover{background-size: cover;}
+
+/******************************************************************************************/
+/******************************************************************************************/
+/************************************COLOR*************************************************/
+/******************************************************************************************/
+/******************************************************************************************/
+.clrwhite{color:white;}
+.clrred{color: red;}
+.clrgreen{color:green;}
+.clryellow{color: yellow;}
+.clrjaune{color: #fb8c00;}
+.clrblack{color: #000000;}
+/******************************************************************************************/
+/******************************************************************************************/
+/************************************line-height*************************************************/
+/******************************************************************************************/
+/******************************************************************************************/
+.lh20px         { line-height: 20px;    }
+.lh30px         { line-height: 30px;    }
+.lh40px         { line-height: 40px;    }
+/******************************************************************************************/
+/******************************************************************************************/
+/************************************Epaisseur_ecriture************************************/
+/******************************************************************************************/
+/******************************************************************************************/
+.bold           { font-weight: bold;    }
+.semiBold       { font-weight: 600;     }
+.regular        { font-weight: 400;     }
+.extralight     { font-weight: 200;     }
+
+/******************************************************************************************/
+/******************************************************************************************/
+/************************************padding&margin****************************************/
+/******************************************************************************************/
+/******************************************************************************************/
+.pt20px         { padding-top: 20px;    }
+.pt30px         { padding-top: 30px;    }
+.paddingT       { padding-top: 40px;    }
+.nopadding      { padding:0px;          }
+.pt50px         { padding-top: 50px;    }
+.pt112px        { padding-top: 112px;   }
+.pt70px         { padding-top: 70px ;   }
+.marginTop      { margin-top: 80px;     }
+.nomargin       { margin:0px;           }
+.pl20prc        { padding-left: 20%;    }
+.paddingr       { padding-right: 50px;  }
+.paddingnav     { padding-right: 20px;  }
+
+.pb40px         { padding-bottom: 40px; }
+.pl50px         { padding-left: 50px;   }
+.pl100px        { padding-left: 100px;  }
+.pr100px        { padding-right: 100px; }
+.pr50px         { padding-right: 50px;  }
+/******************************************************************************************/
+/******************************************************************************************/
+/************************************FONT-SIZE**************************************************/
+/******************************************************************************************/
+/******************************************************************************************/
+.fs20{font-size: 20px;}
+.fs30{font-size: 30px;}
+.fs40{font-size: 40px;}
+.fs50{font-size: 50px;}
+.fs60{font-size: 60px;}
+.fs70{font-size: 70px;}
+.fs80{font-size: 80px;}
+.fs90{font-size: 90px;}
+.fs100{font-size: 100px;}
+/**********************************************************************************/
+/**********************************************************************************/
+/**********************************************************************************/
+/**********************************************************************************/
+/**********************************************************************************/
+/**********************************************************************************/
+/**********************************************************************************/
+/**********************************************************************************/
+/**********************************************************************************/
+
+.border{
+
+	border: 3px solid black;
+}
+
+html, body { margin:0; padding:0; }
+section { position:fixed; width:100%; height: 100vh; top:-60px;}
+
+
+
+.bg-home {background-color: #39134E}
+
+.rotate-center {
+    transform-origin: center;
+	-webkit-animation: rotate-center 35s linear infinite both;
+            animation: rotate-center 35s linear infinite both;
+            
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2018-6-28 15:24:33
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation rotate-center
+ * ----------------------------------------
+ */
+ @-webkit-keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+              
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+              
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+
+
+  .slide-top {
+    transform-origin: center;
+	-webkit-animation: slide-top 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+	        animation: slide-top 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2018-6-28 16:3:37
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-top
+ * ----------------------------------------
+ */
+ @-webkit-keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(20px);
+              transform: translateY(20px);
+    }
+  }
+  @keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(20px);
+              transform: translateY(20px);
+    }
+  }
+
+  .slide-top2 {
+    transform-origin: center;
+	-webkit-animation: slide-top 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+	        animation: slide-top 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2018-6-28 16:3:37
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-top
+ * ----------------------------------------
+ */
+ @-webkit-keyframes slide-top2 {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(40px);
+              transform: translateY(40px);
+    }
+  }
+  @keyframes slide-top2 {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(40px);
+              transform: translateY(40px);
+    }
+  }
+  
+
+  .shake-horizontal {
+      display: visible;
+	-webkit-animation: shake-horizontal 15s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+	        animation: shake-horizontal 15s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2018-6-28 16:29:59
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation shake-horizontal
+ * ----------------------------------------
+ */
+ @-webkit-keyframes shake-horizontal {
+    0%,
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      -webkit-transform: translateX(-3px);
+              transform: translateX(-3px);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: translateX(3px);
+              transform: translateX(3px);
+              
+    }
+    80% {
+      -webkit-transform: translateX(2px);
+              transform: translateX(2px);
+    }
+    90% {
+      -webkit-transform: translateX(-2px);
+              transform: translateX(-2px);
+              
+    }
+  }
+  @keyframes shake-horizontal {
+    0%,
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+              
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      -webkit-transform: translateX(-3px);
+              transform: translateX(-3px);
+              
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: translateX(3px);
+              transform: translateX(3px);
+    }
+    80% {
+      -webkit-transform: translateX(2px);
+              transform: translateX(2px);
+              
+    }
+    90% {
+      -webkit-transform: translateX(-2px);
+              transform: translateX(-2px);
+    }
+  }
+  
+
+
+  .vibrate-1 {
+	-webkit-animation: vibrate-1 5s infinite both;
+	        animation: vibrate-1 5s infinite both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2018-6-28 16:47:31
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation vibrate-1
+ * ----------------------------------------
+ */
+ @-webkit-keyframes vibrate-1 {
+    0% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+    20% {
+      -webkit-transform: translate(-4px, 4px);
+              transform: translate(-4px, 4px);
+    }
+    40% {
+      -webkit-transform: translate(-4px, -4px);
+              transform: translate(-4px, -4px);
+    }
+    60% {
+      -webkit-transform: translate(4px, 4px);
+              transform: translate(4px, 4px);
+    }
+    80% {
+      -webkit-transform: translate(4px, -4px);
+              transform: translate(4px, -4px);
+    }
+    100% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+  }
+  @keyframes vibrate-1 {
+    0% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+    20% {
+        -webkit-transform: translate(-4px, 4px);
+                transform: translate(-4px, 4px);
+      }
+      40% {
+        -webkit-transform: translate(-4px, -4px);
+                transform: translate(-4px, -4px);
+      }
+      60% {
+        -webkit-transform: translate(4px, 4px);
+                transform: translate(4px, 4px);
+      }
+      80% {
+        -webkit-transform: translate(4px, -4px);
+                transform: translate(4px, -4px);
+    }
+    100% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+  }
+  
+
+
+
+  .wobble-ver-left {
+	-webkit-animation: wobble-ver-left 1s steps(5, end) NaNs infinite both;
+	        animation: wobble-ver-left 1s steps(5, end) NaNs infinite both;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2018-6-28 16:56:7
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation wobble-ver-left
+ * ----------------------------------------
+ */
+ /* ----------------------------------------------
+ * Generated by Animista on 2018-6-28 16:57:6
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation wobble-ver-left
+ * ----------------------------------------
+ */
+@-webkit-keyframes wobble-ver-left {
+    0%,
+    100% {
+      -webkit-transform: translateY(0) rotate(0);
+              transform: translateY(0) rotate(0);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+    }
+    15% {
+      -webkit-transform: translateY(-30px) rotate(-6deg);
+              transform: translateY(-30px) rotate(-6deg);
+    }
+    30% {
+      -webkit-transform: translateY(15px) rotate(6deg);
+              transform: translateY(15px) rotate(6deg);
+    }
+    45% {
+      -webkit-transform: translateY(-15px) rotate(-3.6deg);
+              transform: translateY(-15px) rotate(-3.6deg);
+    }
+    60% {
+      -webkit-transform: translateY(9px) rotate(2.4deg);
+              transform: translateY(9px) rotate(2.4deg);
+    }
+    75% {
+      -webkit-transform: translateY(-6px) rotate(-1.2deg);
+              transform: translateY(-6px) rotate(-1.2deg);
+    }
+  }
+  @keyframes wobble-ver-left {
+    0%,
+    100% {
+      -webkit-transform: translateY(0) rotate(0);
+              transform: translateY(0) rotate(0);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+    }
+    15% {
+      -webkit-transform: translateY(-30px) rotate(-6deg);
+              transform: translateY(-30px) rotate(-6deg);
+    }
+    30% {
+      -webkit-transform: translateY(15px) rotate(6deg);
+              transform: translateY(15px) rotate(6deg);
+    }
+    45% {
+      -webkit-transform: translateY(-15px) rotate(-3.6deg);
+              transform: translateY(-15px) rotate(-3.6deg);
+    }
+    60% {
+      -webkit-transform: translateY(9px) rotate(2.4deg);
+              transform: translateY(9px) rotate(2.4deg);
+    }
+    75% {
+      -webkit-transform: translateY(-6px) rotate(-1.2deg);
+              transform: translateY(-6px) rotate(-1.2deg);
+    }
+  }
+  
+
+
+  .vibrate-2 {
+	-webkit-animation: vibrate-1 0.3s linear infinite both;
+	        animation: vibrate-1 0.3s linear infinite both;
+}
+
+
+
+/* ----------------------------------------------
+ * Generated by Animista on 2018-6-29 7:59:8
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation vibrate-1
+ * ----------------------------------------
+ */
+ @-webkit-keyframes vibrate-2 {
+    0% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+    20% {
+      -webkit-transform: translate(-2px, 2px);
+              transform: translate(-2px, 2px);
+    }
+    40% {
+      -webkit-transform: translate(-2px, -2px);
+              transform: translate(-2px, -2px);
+    }
+    60% {
+      -webkit-transform: translate(2px, 2px);
+              transform: translate(2px, 2px);
+    }
+    80% {
+      -webkit-transform: translate(2px, -2px);
+              transform: translate(2px, -2px);
+    }
+    100% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+  }
+  @keyframes vibrate-2 {
+    0% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+    20% {
+      -webkit-transform: translate(-2px, 2px);
+              transform: translate(-2px, 2px);
+    }
+    40% {
+      -webkit-transform: translate(-2px, -2px);
+              transform: translate(-2px, -2px);
+    }
+    60% {
+      -webkit-transform: translate(2px, 2px);
+              transform: translate(2px, 2px);
+    }
+    80% {
+      -webkit-transform: translate(2px, -2px);
+              transform: translate(2px, -2px);
+    }
+    100% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+    }
+  }
+
+
+
+  .heartbeat {
+    transform-origin: center;   
+	-webkit-animation: heartbeat 5s ease-in-out infinite both;
+	        animation: heartbeat 5s ease-in-out infinite both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2018-6-29 8:20:44
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation heartbeat
+ * ----------------------------------------
+ */
+ @-webkit-keyframes heartbeat {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    10% {
+      -webkit-transform: scale(0.91);
+              transform: scale(0.91);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    17% {
+      -webkit-transform: scale(0.98);
+              transform: scale(0.98);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    33% {
+      -webkit-transform: scale(0.87);
+              transform: scale(0.87);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    45% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+  }
+  @keyframes heartbeat {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    10% {
+      -webkit-transform: scale(0.91);
+              transform: scale(0.91);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    17% {
+      -webkit-transform: scale(0.98);
+              transform: scale(0.98);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    33% {
+      -webkit-transform: scale(0.87);
+              transform: scale(0.87);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    45% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+  }
+  
+  .shake-lr {
+	-webkit-animation: shake-lr 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+	        animation: shake-lr 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2018-6-29 8:33:56
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation shake-lr
+ * ----------------------------------------
+ */
+ @-webkit-keyframes shake-lr {
+    0%,
+    100% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+    }
+    10% {
+      -webkit-transform: rotate(5deg);
+              transform: rotate(5deg);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: rotate(-8deg);
+              transform: rotate(-8deg);
+    }
+    30%,
+    50%,
+    70% {
+      -webkit-transform: rotate(8deg);
+              transform: rotate(8deg);
+    }
+    80% {
+      -webkit-transform: rotate(-5deg);
+              transform: rotate(-5deg);
+    }
+    90% {
+      -webkit-transform: rotate(5deg);
+              transform: rotate(5deg);
+    }
+  }
+  @keyframes shake-lr {
+    0%,
+    100% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+    }
+    10% {
+      -webkit-transform: rotate(3deg);
+              transform: rotate(3deg);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: rotate(-5deg);
+              transform: rotate(-5deg);
+    }
+    30%,
+    50%,
+    70% {
+      -webkit-transform: rotate(5deg);
+              transform: rotate(5deg);
+    }
+    80% {
+      -webkit-transform: rotate(-4deg);
+              transform: rotate(-4deg);
+    }
+    90% {
+      -webkit-transform: rotate(4deg);
+              transform: rotate(4deg);
+    }
+  }
+  
+
+  
+  
