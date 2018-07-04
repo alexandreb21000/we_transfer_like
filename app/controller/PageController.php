@@ -6,8 +6,8 @@ class PageController extends Controller {
         //Check les erreurs lors de l'upload
         if(!empty($_FILES)){
             if(isset($_FILES))
-            $upload = Meme::upload();
-            $envoimail = Meme::envoimail();
+            $upload = Wetransfert::upload();
+            $envoimail = Wetransfert::envoimail();
         } 
 
 
@@ -15,7 +15,7 @@ class PageController extends Controller {
 
         $template = $this->twig->loadTemplate('/Page/index.html.twig');
         echo $template->render(array(
-            'meme' => isset($upload)
+            'wetransfert' => isset($upload)
         ));
 
 

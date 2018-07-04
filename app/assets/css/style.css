@@ -49,40 +49,6 @@ table {
 }
 
 
-@font-face {      
-    font-family: "Ostrich";
-	src: url("../../Ostrich.ttf") format("opentype");
-}
-
-@font-face {      
-    font-family: "../../pokemon";
-	src: url("../../Pokemon_Solid.ttf") format("opentype");
-}
-
-@font-face {      
-    font-family: "ostrichSansInline_Italic";
-	src: url("../../OstrichSansInline_Italic2.ttf") format("opentype");
-}
-@font-face {      
-    font-family: "Capture_it";
-	src: url("../../font/Capture_it.ttf") format("opentype");
-}
-@font-face {      
-    font-family: "gunplay";
-	src: url("../../font/gunplay.ttf") format("opentype");
-}
-@font-face {      
-    font-family: "Top_Secret";
-	src: url("../../font/Top_Secret.ttf") format("opentype");
-}
-@font-face {      
-    font-family: "WarWound";
-	src: url("../../font/WarWound.ttf") format("opentype");
-}
-@font-face {      
-    font-family: "ts";
-	src: url("../../font/ts.ttf") format("opentype");
-}
 /***********************************************************************************/
 /******VARIABLE GLOBALE**/
 /***********************************************************************************/
@@ -241,8 +207,13 @@ table {
 	border: 3px solid black;
 }
 
-html, body { margin:0; padding:0; }
-section { position:fixed; width:100%; height: 100vh; top:-60px;}
+html, body { margin:0; padding:0;  overflow-y: hidden; font-family: 'Roboto', sans-serif; }
+.section1 { position:fixed; 
+        width:100%; 
+        height: 100vh; 
+  
+        z-index: 100;
+}
 
 
 
@@ -841,4 +812,188 @@ section { position:fixed; width:100%; height: 100vh; top:-60px;}
   
 
   
-  
+  	
+/*REGION HELP*/
+
+        .btinfos{
+            width:30px;
+            height:30px;
+            position:absolute;
+            top:80px;
+            right: 100px;
+            border-radius:50%;
+            z-index: 125;
+        }
+        
+        .txtdivhlp{
+            position: absolute;
+            top:0px;
+            height:100vh;
+        }
+        .help {
+            position: absolute;
+            z-index: 102;
+        top: 0px;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: flex-end;
+            background-color: transparent;
+            /*flex-direction:column;*/
+            align-items: flex-end
+        }
+        
+        .help p{
+            padding:10px 50px 10px 50px;
+        }
+        
+            .help h1 {
+                height: 5vh;
+                text-align: center;
+                font-size: large;
+                padding-top: 1vh;
+        
+                width:100%;
+            }
+        
+        .close{
+                display: flex;
+                align-content: flex-end;
+                width:100%;
+                position: relative;
+                z-index: 102;
+        }
+        
+        closehlp {
+        
+            width: 24px;
+            height: 24px;
+        }
+        
+        closehelp {
+            position: absolute;
+            margin-left: 90%;
+            width: 30px;
+            height: 30px;
+        }
+        
+        .textanim {
+            overflow: hidden;
+            animation: textanim 3s linear 2s 1 alternate;
+        }
+        
+        /* Safari 4.0 - 8.0 */
+        @-webkit-keyframes textanim {
+            from {
+                color: white;
+            }
+        
+            to {
+                color: #393939;
+            }
+        }
+        
+        /* Standard syntax */
+        @keyframes textanim {
+            from {
+                color: white;
+            }
+        
+            to {
+                color: #393939;
+            }
+        }
+        
+        .helpdiv {
+            position: absolute;
+            z-index: 100;
+            top: 0px;
+            height: 100vh;
+            width: 0vw;
+            color :#393939;
+            background-color: white;
+            transition: width ease-in-out 2s;
+            /*display: flex;
+            align-items: flex-end;*/
+        
+            
+        
+            /*left: calc(100vw-20vw);*/
+        }
+        
+        
+        .onglets {
+            position: absolute;
+            z-index: 101;
+            top: 0px;
+            height: 100vh;
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        .helpdivshow {
+            width: 30%;
+        }
+        
+            /*.helpdiv:hover {
+                width: 30%;
+            }*/
+        
+        .cgdiv {
+            position: absolute;
+            z-index: 110;
+            top: calc(100vh-10vh);
+            height: 10vh;
+            width: 100%;
+            background-color: white;
+            transition: height ease-in-out 2s;
+            -webkit-box-shadow: 0px -3px 5px 0px rgba(153,153,153,0.86);
+            -moz-box-shadow: 0px -3px 5px 0px rgba(153,153,153,0.86);
+            box-shadow: 0px -3px 5px 0px rgba(153,153,153,0.86);
+            /*left: calc(100vw-20vw);*/
+        }
+        .cgdiv:hover {
+            height: 100vh;
+            -webkit-box-shadow: 0px -3px 5px 0px rgba(153,153,153,0.86);
+        -moz-box-shadow: 0px -3px 5px 0px rgba(153,153,153,0.86);
+        box-shadow: 0px -3px 5px 0px rgba(153,153,153,0.86);
+        }
+        
+        .cudiv {
+            position: absolute;
+            z-index: 120;
+            top: calc(100vh-5vh);
+            height: 5vh;
+            width: 100%;
+            background-color: white;
+            transition: height ease-in-out 2s;
+            /*left: calc(100vw-20vw);*/
+            -webkit-box-shadow: 0px -3px 5px 0px rgba(153,153,153,0.86);
+            -moz-box-shadow: 0px -3px 5px 0px rgba(153,153,153,0.86);
+            box-shadow: 0px -3px 5px 0px rgba(153,153,153,0.86);
+        }
+        
+        .cudiv:hover {
+            height: 100vh;
+        }
+        
+        
+        /*#endregion help zone*/
+
+
+        .position_svg {position:absolute;}
+        .left_0  {left:0;}
+        .top_0   {top:0;}
+        .position_help {position:relative;}
+
+
+        .logo{
+                width:90px;
+                height:75px;
+                position:absolute;
+                top: 50px;
+                left: 100px;
+                z-index: 150;
+            }
