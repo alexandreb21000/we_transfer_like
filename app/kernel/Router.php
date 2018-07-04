@@ -15,8 +15,17 @@ class Router {
             $result['params']['limit'] = 5;
         } else {
             $parts = explode('/', $request);
+            
+            if (count($parts) == 2) {
+            if($parts[0] == 'download' && (count($parts) == 1 || $parts[1] !== '')) {
+                $result['controller']       = 'Load';
+                $result['action']           = 'load';
+                $result["params"]["filename"] = $parts[1];
+             }
 
-            if($parts[0] == 'login' && (count($parts) == 1 || $parts[1] == '')){ // Route vers la page de connexion
+
+
+            } elseif($parts[0] == 'login' && (count($parts) == 1 || $parts[1] == '')){ // Route vers la page de connexion
                 $result['controller']       = 'User';
                 $result['action']           = 'login';
             } elseif($parts[0] == 'signup' && (count($parts) == 1 || $parts[1] == '')){ // Route vers la page d'inscription
