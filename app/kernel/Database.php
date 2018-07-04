@@ -1,6 +1,6 @@
 <?php
 
-require_once(ROOT.'\app\config.php');
+require_once(ROOT.'/app/config.php');
 
 class Database  {
     

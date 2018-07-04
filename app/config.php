@@ -1,6 +1,6 @@
 <?php 
 define("server_name", "localhost");
-define("db_name", "wetransfert");
+define("db_name","wetransfert");
 define("user", "root");
 define("password", "");
 /* 
